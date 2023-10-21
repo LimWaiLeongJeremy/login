@@ -29,7 +29,7 @@ public class UserService {
         Set<Role> roles = new HashSet<>();
         roles.add(role);
         user.setRole(roles);
-        user.setPassword(encodderPassword(user.getPassword()));
+        user.setPassword(encoderPassword(user.getPassword()));
 
         return userRepo.save(user);
     }
@@ -43,24 +43,35 @@ public class UserService {
         roleRepo.save(adminRole);
 
         Role userRole = new Role();
-        userRole.setRole("Admin");
-        userRole.setDescription("Admin role");
+        userRole.setRole("User");
+        userRole.setDescription("User role");
         roleRepo.save(userRole);
 
-        // initialize user
+        // initialize adminUser
+        User adminUser = new User();
+        adminUser.setFirstName("Admin");
+        adminUser.setLastName("Admin");
+        adminUser.setUserName("Admin");
+        adminUser.setEmail("admin@test.com");
+        adminUser.setPassword(encoderPassword("admin"));
+        Set<Role> adminUserRoles = new HashSet<>();
+        adminUserRoles.add(adminRole);
+        adminUser.setRole(adminUserRoles);
+        userRepo.save(adminUser);
+
         User user = new User();
         user.setFirstName("Adam");
         user.setLastName("Bret");
         user.setUserName("AdamBret");
         user.setEmail("adambret@test.com");
-        user.setPassword(encodderPassword("adambret"));
+        user.setPassword(encoderPassword("adambret"));
         Set<Role> userRoles = new HashSet<>();
         userRoles.add(userRole);
         user.setRole(userRoles);
         userRepo.save(user);
     }
-
-    private String encodderPassword(String password) {
+    
+    private String encoderPassword(String password) {
         return passwordEncoder.encode(password);
     }
 
