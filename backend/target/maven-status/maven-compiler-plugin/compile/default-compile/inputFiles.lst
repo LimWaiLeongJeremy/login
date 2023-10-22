@@ -1,6 +1,8 @@
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\model\JwtResponse.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\repository\RoleRepository.java
+C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\configuration\WebSecurityConfig.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\model\JwtRequest.java
+C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\configuration\JwtAuthenticationEntryPoint.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\controller\UserController.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\service\RoleService.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\LoginApplication.java
