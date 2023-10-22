@@ -46,7 +46,7 @@ public class JwtUtil {
         return getClaim(token, Claims::getExpiration);
     }
 
-    private String generateToken(UserDetails userDetails) {
+    public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
 
         return Jwts
