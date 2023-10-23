@@ -1,0 +1,10 @@
+========================================
+
+POST localhost:8080/api/authenticate
+Body:
+    {
+        "userName": "{username}",
+        "password": "{password}"
+    }
+
+========================================
