@@ -24,7 +24,7 @@ export class LoginService {
     this.userName = loginData.userName;
     this.password = loginData.password;
     return this.http.post<AuthResponse>(
-      this.endpoint + '?authenticate',
+      this.endpoint + '/authenticate',
       loginData,
       {
         headers: this.requestHeader
