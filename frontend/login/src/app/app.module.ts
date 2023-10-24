@@ -2,7 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -11,8 +11,10 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
 import { AuthGuard } from "./authentication/auth.guard";
+import { AuthInterceptor } from "./authentication/auth.interceptor";
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { LoginService } from './service/login/login.service';
 
 
 const routes: Routes = [
@@ -62,7 +64,15 @@ const routes: Routes = [
     InputTextModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
