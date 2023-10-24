@@ -15,7 +15,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtUtil {
-    
+
     private static final String SECRET_KEY = UUID.randomUUID().toString();
     private static final int TOKEN_VALIDITY = 600 * 5;
 
@@ -31,16 +31,17 @@ public class JwtUtil {
 
     private Claims getAllClaims(String token) {
         return Jwts
-            .parser()
-            .setSigningKey(SECRET_KEY)
-            .parseClaimsJws(token)
-            .getBody();
+                .parser()
+                .setSigningKey(SECRET_KEY)
+                .parseClaimsJws(token)
+                .getBody();
     }
 
     public boolean validate(String token, UserDetails userDetails) {
         String userName = getUserNameFromToken(token);
         return (userName.equals(userDetails.getUsername()) && !tokenExpired(token));
     }
+
     private boolean tokenExpired(String token) {
         final Date expDate = getExpDate(token);
         return expDate.before(new Date());
@@ -54,14 +55,13 @@ public class JwtUtil {
         Map<String, Object> claims = new HashMap<>();
 
         return Jwts
-            .builder()
-            .setClaims(claims)
-            .setSubject(userDetails.getUsername())
-            .setIssuedAt(new Date(System.currentTimeMillis()))
-            .setExpiration(
-                new Date(System.currentTimeMillis() + TOKEN_VALIDITY * 1000)
-            )
-            .signWith(SignatureAlgorithm.HS512, SECRET_KEY)
-            .compact();
+                .builder()
+                .setClaims(claims)
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(
+                        new Date(System.currentTimeMillis() + TOKEN_VALIDITY * 1000))
+                .signWith(SignatureAlgorithm.HS512, SECRET_KEY)
+                .compact();
     }
 }

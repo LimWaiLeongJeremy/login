@@ -37,7 +37,7 @@ export class AuthService {
   public setUserName(userName: string) {
     this.usernameSubject.next(userName);
     sessionStorage.setItem('userName', userName);
-  } 
+  }
 
   public getUserName() {
     return sessionStorage.getItem('userName');
@@ -90,12 +90,12 @@ export class AuthService {
     localStorage.clear();
   }
 
-  public authenticated() { 
+  public authenticated() {
     const token = sessionStorage.getItem('jwtToken');
     return this.getToken() && this.getRole();
   }
-  
-  public emitRoleChange(role: any) { 
+
+  public emitRoleChange(role: any) {
     this.roleChange.next(role);
   }
 

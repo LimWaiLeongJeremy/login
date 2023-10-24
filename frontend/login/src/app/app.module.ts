@@ -38,21 +38,21 @@ const routes: Routes = [
     title: 'Home Page',
     component: HomePageComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['Admin', 'User']},
+    data: { roles: ['Admin', 'User'] },
   },
   {
     path: 'admin',
     title: 'Admin Page',
     component: AdminPageComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['Admin']},
+    data: { roles: ['Admin'] },
   },
   {
     path: 'forbidden',
     title: 'Forbidden Page',
     component: ForbiddenPageComponent,
   },
-  { path: '**', redirectTo: '/', pathMatch: 'full'}
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ]
 
 @NgModule({

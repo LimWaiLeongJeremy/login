@@ -70,7 +70,7 @@ public class UserService {
         user.setRole(userRoles);
         userRepo.save(user);
     }
-    
+
     private String encoderPassword(String password) {
         return passwordEncoder.encode(password);
     }

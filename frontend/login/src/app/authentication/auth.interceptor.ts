@@ -7,19 +7,19 @@ import { Observable, catchError, throwError } from "rxjs";
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
     token = this.authsrv.getToken() || '';
-    constructor( 
+    constructor(
         private authsrv: AuthService,
         private router: Router,
-    ) {}
+    ) { }
 
     intercept(
         req: HttpRequest<any>,
         next: HttpHandler
-    ): Observable<HttpEvent<any>> { 
+    ): Observable<HttpEvent<any>> {
         if (req.headers.get('NoAuth') === 'True') {
             return next.handle(req.clone());
         }
-        
+
         const token = this.authsrv.getToken() || '';
 
         if (token) {
@@ -41,7 +41,7 @@ export class AuthInterceptor implements HttpInterceptor {
                     console.info(err);
                     this.router.navigate((['/forbidden']));
                     return throwError('Access Denied')
-                } else { 
+                } else {
                     console.info(err);
                     return throwError(err.message);
                 }
@@ -49,5 +49,5 @@ export class AuthInterceptor implements HttpInterceptor {
         );
     }
 
-    
+
 }

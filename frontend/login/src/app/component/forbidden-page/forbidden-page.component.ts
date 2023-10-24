@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./forbidden-page.component.css']
 })
 export class ForbiddenPageComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   public routeToHomePage() {
     this.router.navigate(['/home']);
