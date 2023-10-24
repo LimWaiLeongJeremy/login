@@ -15,6 +15,7 @@ import { AuthInterceptor } from "./authentication/auth.interceptor";
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
+import { ToastModule } from 'primeng/toast';
 import { LoginService } from './service/login/login.service';
 import { HeaderComponent } from './component/header/header.component';
 import { ForbiddenPageComponent } from './component/forbidden-page/forbidden-page.component';
@@ -75,6 +76,7 @@ const routes: Routes = [
     InputTextModule,
     MenubarModule,
     HttpClientModule,
+    ToastModule,
   ],
   providers: [
     AuthGuard,
