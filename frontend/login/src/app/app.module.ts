@@ -15,6 +15,8 @@ import { AuthInterceptor } from "./authentication/auth.interceptor";
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { LoginService } from './service/login/login.service';
+import { HeaderComponent } from './component/header/header.component';
+import { ForbiddenPageComponent } from './component/forbidden-page/forbidden-page.component';
 
 
 const routes: Routes = [
@@ -47,7 +49,9 @@ const routes: Routes = [
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    HeaderComponent,
+    ForbiddenPageComponent
   ],
   imports: [
     BrowserModule,
