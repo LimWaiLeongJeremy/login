@@ -11,7 +11,8 @@ export class HomePageComponent {
   firstName = this.authSrc.getFirstName();
   lastName = this.authSrc.getLastName();
   email = this.authSrc.getEmail();
-  role = this.authSrc.getRole();
+  role = this.authSrc.getRole()[0]['role'];
+
   constructor(private authSrc: AuthService) {}
 
 
