@@ -36,6 +36,9 @@ export class LoginPageComponent {
         sessionStorage.clear();
         localStorage.clear;
         this.authSrc.setUserName(response.user.userName);
+        this.authSrc.setFirstName(response.user.firstName);
+        this.authSrc.setLastName(response.user.lastName);
+        this.authSrc.setEmail(response.user.email); 
         this.authSrc.setRole(response.user.role);
         this.authSrc.setToken(response.jwtToken);
         localStorage.setItem('token', response.jwtToken);
