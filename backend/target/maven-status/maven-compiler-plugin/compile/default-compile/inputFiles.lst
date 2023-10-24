@@ -10,6 +10,7 @@ C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\LoginAppl
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\configuration\SecurityConfig.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\model\Role.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\model\User.java
+C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\configuration\CorsConfiguration.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\service\JwtService.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\util\JwtUtil.java
 C:\Users\J\Desktop\project\login\backend\src\main\java\com\login\login\controller\JwtController.java

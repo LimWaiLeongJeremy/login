@@ -1,0 +1,7 @@
+p {
+    text-align: justify;
+}
+
+::ng-deep .p-fieldset{
+    margin:20px;
+}

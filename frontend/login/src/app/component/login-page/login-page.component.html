@@ -1,0 +1,22 @@
+<p-toast key="loginToast"></p-toast>
+
+<div class="text-center">
+    <p>Admin account - username: Admin password: admin</p>
+    <p>User account - username: AdamBret password: adambret</p>
+    <h1 style="padding: 20px;">This is a Demo login page</h1>
+</div>
+<div id="formDiv">
+    <form [formGroup]="form" (submit)="submit()" >
+        <span class="p-float-label">
+            <input pInputText id="username" name="username" formControlName="userName" />
+            <label htmlFor="username">Username</label>
+        </span>
+
+        <span class="p-float-label">
+            <input pInputText type="password" id="password" name="password" formControlName="password" />
+            <label htmlFor="password">Password</label>
+        </span>
+
+        <p-button id="loginBtn" type="submit" label="Login"></p-button>
+    </form>
+</div>
