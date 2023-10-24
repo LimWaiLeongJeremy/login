@@ -41,7 +41,13 @@ const routes: Routes = [
     component: AdminPageComponent,
     canActivate: [AuthGuard],
     data: { role: ['Admin']},
-  }
+  },
+  {
+    path: 'forbiddn',
+    title: 'Forbidden Page',
+    component: ForbiddenPageComponent,
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full'}
 ]
 
 @NgModule({
