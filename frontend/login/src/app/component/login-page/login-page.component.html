@@ -5,14 +5,14 @@
     <h1 style="padding: 20px;">This is a Demo login page</h1>
 </div>
 <div id="formDiv">
-    <form [formGroup]="form" >
+    <form [formGroup]="form" (submit)="submit()" >
         <span class="p-float-label">
-            <input pInputText id="username" name="username" formControlName="username" />
+            <input pInputText id="username" name="username" formControlName="userName" />
             <label htmlFor="username">Username</label>
         </span>
 
         <span class="p-float-label">
-            <input pInputText id="password" name="password" formControlName="password" />
+            <input pInputText type="password" id="password" name="password" formControlName="password" />
             <label htmlFor="password">Password</label>
         </span>
 
