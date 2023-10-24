@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  userName = this.authSrc.getUserName();
+  firstName = this.authSrc.getFirstName();
+  lastName = this.authSrc.getLastName();
+  email = this.authSrc.getEmail();
+  role = this.authSrc.getRole();
+  constructor(private authSrc: AuthService) {}
+
 
 }
