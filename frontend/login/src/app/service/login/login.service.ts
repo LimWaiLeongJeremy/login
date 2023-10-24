@@ -37,14 +37,7 @@ export class LoginService {
     const userRoles: Roles[] = this.authSrc.getRole();
     if (userRoles != null && userRoles) {
       for (let i = 0; i < userRoles.length; i++) {
-        for (let j = 0; j < allowedRoles.length; j++) {
-          if (userRoles[i].role === allowedRoles[j]) {
-            isMatch = true;
-            return isMatch;
-          } else {
-            return isMatch;
-          }
-        }
+        return allowedRoles.includes(userRoles[i].role);
       }
     }
     return isMatch;

@@ -19,6 +19,7 @@ import { ToastModule } from 'primeng/toast';
 import { LoginService } from './service/login/login.service';
 import { HeaderComponent } from './component/header/header.component';
 import { ForbiddenPageComponent } from './component/forbidden-page/forbidden-page.component';
+import { FieldsetModule } from 'primeng/fieldset';
 
 
 const routes: Routes = [
@@ -36,6 +37,8 @@ const routes: Routes = [
     path: 'home',
     title: 'Home Page',
     component: HomePageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin', 'User']},
   },
   {
     path: 'admin',
@@ -77,6 +80,7 @@ const routes: Routes = [
     MenubarModule,
     HttpClientModule,
     ToastModule,
+    FieldsetModule
   ],
   providers: [
     AuthGuard,
