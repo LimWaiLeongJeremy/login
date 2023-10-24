@@ -14,6 +14,7 @@ import { AuthGuard } from "./authentication/auth.guard";
 import { AuthInterceptor } from "./authentication/auth.interceptor";
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { MenubarModule } from 'primeng/menubar';
 import { LoginService } from './service/login/login.service';
 import { HeaderComponent } from './component/header/header.component';
 import { ForbiddenPageComponent } from './component/forbidden-page/forbidden-page.component';
@@ -40,10 +41,10 @@ const routes: Routes = [
     title: 'Admin Page',
     component: AdminPageComponent,
     canActivate: [AuthGuard],
-    data: { role: ['Admin']},
+    data: { roles: ['Admin']},
   },
   {
-    path: 'forbiddn',
+    path: 'forbidden',
     title: 'Forbidden Page',
     component: ForbiddenPageComponent,
   },
@@ -72,6 +73,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ButtonModule,
     InputTextModule,
+    MenubarModule,
     HttpClientModule,
   ],
   providers: [
