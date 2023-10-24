@@ -32,7 +32,7 @@ export class LoginService {
     );
   }
 
-  public roleMatc(allowedRoles: string | any[]): boolean {
+  public roleMatch(allowedRoles: string | any[]): boolean {
     let isMatch = false;
     const userRoles: Roles[] = this.authSrc.getRole();
     if (userRoles != null && userRoles) {
