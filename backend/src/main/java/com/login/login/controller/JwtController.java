@@ -13,7 +13,7 @@ import com.login.login.service.JwtService;
 @RestController
 @RequestMapping(path = "/api")
 public class JwtController {
-    
+
     @Autowired
     private JwtService jwtSrc;
 

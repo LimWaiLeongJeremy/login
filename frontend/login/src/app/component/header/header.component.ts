@@ -18,7 +18,7 @@ export class HeaderComponent {
   ) { }
 
 
-  public authenticated() { 
+  public authenticated() {
     this.userRole = this.authSrv.getRole();
     return this.authSrv.authenticated();
   }
@@ -30,7 +30,7 @@ export class HeaderComponent {
     this.router.navigate(['/login']);
   }
 
-  goToAdminPage(){
+  goToAdminPage() {
     this.router.navigate(["/admin"]);
   }
 

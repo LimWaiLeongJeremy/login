@@ -13,7 +13,7 @@ export class HomePageComponent {
   email = this.authSrc.getEmail();
   role = this.authSrc.getRole()[0]['role'];
 
-  constructor(private authSrc: AuthService) {}
+  constructor(private authSrc: AuthService) { }
 
 
 }

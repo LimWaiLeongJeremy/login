@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   public routeToHomePage() {
     this.router.navigate(['/home']);

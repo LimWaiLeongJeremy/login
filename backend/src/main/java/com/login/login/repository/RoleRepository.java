@@ -7,5 +7,5 @@ import com.login.login.model.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, String> {
-    
+
 }

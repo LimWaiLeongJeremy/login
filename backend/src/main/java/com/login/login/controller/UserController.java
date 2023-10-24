@@ -13,10 +13,10 @@ import com.login.login.service.UserService;
 @RequestMapping(path = "/api")
 @CrossOrigin
 public class UserController {
-    
+
     @Autowired
     private UserService userSrc;
-    
+
     @PostConstruct
     public void initRolesAndUser() {
         userSrc.initRolesAndUser();

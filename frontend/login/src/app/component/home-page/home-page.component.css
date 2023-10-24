@@ -2,6 +2,6 @@ p {
     text-align: justify;
 }
 
-::ng-deep .p-fieldset{
-    margin:20px;
+::ng-deep .p-fieldset {
+    margin: 20px;
 }

@@ -1,14 +1,5 @@
 <p-menubar>
-    <p-button 
-        *ngIf="authenticated() && authSrv.getRole()[0]['role'] === 'Admin'"
-        label="Admin Dashboard" 
-        severity="primary"
-        (onClick)="goToAdminPage()"
-    ></p-button>
-    <p-button 
-        *ngIf="authenticated()"
-        label="Logout" 
-        severity="danger"
-        (onClick)="loggedOut()"
-    ></p-button>
+    <p-button *ngIf="authenticated() && authSrv.getRole()[0]['role'] === 'Admin'" label="Admin Dashboard"
+        severity="primary" (onClick)="goToAdminPage()"></p-button>
+    <p-button *ngIf="authenticated()" label="Logout" severity="danger" (onClick)="loggedOut()"></p-button>
 </p-menubar>
