@@ -87,6 +87,7 @@ export class AuthService {
 
   public clear() {
     sessionStorage.clear();
+    localStorage.clear();
   }
 
   public authenticated() { 
