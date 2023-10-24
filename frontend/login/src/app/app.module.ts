@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
-
+import { AuthGuard } from "./authentication/auth.guard";
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
@@ -30,6 +30,13 @@ const routes: Routes = [
     path: 'home',
     title: 'Home Page',
     component: HomePageComponent,
+  },
+  {
+    path: 'admin',
+    title: 'Admin Page',
+    component: AdminPageComponent,
+    canActivate: [AuthGuard],
+    data: { role: ['Admin']},
   }
 ]
 
@@ -55,7 +62,7 @@ const routes: Routes = [
     InputTextModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
