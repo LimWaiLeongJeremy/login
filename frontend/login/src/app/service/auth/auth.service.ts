@@ -11,6 +11,9 @@ export class AuthService {
   private token!: string;
   private tokenSubject = new Subject<string>();
   private usernameSubject = new Subject<string>();
+  private userFirstNameSubject = new Subject<string>();
+  private userLastNameSubject = new Subject<string>();
+  private userEmailSubject = new Subject<string>();
   token$ = this.tokenSubject.asObservable();
   userName$ = this.usernameSubject.asObservable();
   private roleChange = new Subject<any>();
@@ -52,6 +55,41 @@ export class AuthService {
     return sessionStorage.getItem('jwtToken');
   }
 
+
+  public setFirstName(firstName: string) {
+    this.userFirstNameSubject.next(firstName);
+    sessionStorage.setItem('firstName', firstName);
+  }
+
+  public getFirstName() {
+    return sessionStorage.getItem('firstName');
+  }
+
+
+  public setLastName(lastName: string) {
+    this.userLastNameSubject.next(lastName);
+    sessionStorage.setItem('lastName', lastName);
+  }
+
+  public getLastName() {
+    return sessionStorage.getItem('lastName');
+  }
+
+
+  public setEmail(email: string) {
+    this.userEmailSubject.next(email);
+    sessionStorage.setItem('email', email);
+  }
+
+  public getEmail() {
+    return sessionStorage.getItem('email');
+  }
+
+
+  public clear() {
+    sessionStorage.clear();
+  }
+  
   emitRoleChange(role: any) { 
     this.roleChange.next(role);
   }
