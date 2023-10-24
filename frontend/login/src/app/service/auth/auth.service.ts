@@ -15,6 +15,11 @@ export class AuthService {
   userName$ = this.usernameSubject.asObservable();
   private roleChange = new Subject<any>();
 
+
+  public setRole(roles: Roles[]) {
+    sessionStorage.setItem('roles', JSON.stringify(roles));
+  }
+
   public getRole() {
     let role;
     try {
@@ -26,8 +31,29 @@ export class AuthService {
     return role;
   }
 
+
+  public setUserName(userName: string) {
+    this.usernameSubject.next(userName);
+    sessionStorage.setItem('userName', userName);
+  } 
+
+  public getUserName() {
+    return sessionStorage.getItem('userName');
+  }
+
+
+  public setToken(jwtToken: string) {
+    sessionStorage.setItem('jwtToken', jwtToken);
+    this.token = jwtToken;
+    this.tokenSubject.next(jwtToken);
+  }
+
   public getToken() {
     return sessionStorage.getItem('jwtToken');
+  }
+
+  emitRoleChange(role: any) { 
+    this.roleChange.next(role);
   }
 
 
