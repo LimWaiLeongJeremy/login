@@ -2,6 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,13 +18,18 @@ import { ButtonModule } from 'primeng/button';
 const routes: Routes = [
   {
     path: '',
-    title: 'Login page',
+    title: 'Login Page',
     component: LoginPageComponent,
   },
   {
     path: 'login',
-    title: 'Login page',
+    title: 'Login Page',
     component: LoginPageComponent,
+  },
+  {
+    path: 'home',
+    title: 'Home Page',
+    component: HomePageComponent,
   }
 ]
 
@@ -47,6 +53,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ButtonModule,
     InputTextModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
