@@ -7,7 +7,6 @@ import { Roles } from "../../model/role";
 })
 export class AuthService {
 
-
   private token!: string;
   private tokenSubject = new Subject<string>();
   private usernameSubject = new Subject<string>();
@@ -89,11 +88,15 @@ export class AuthService {
   public clear() {
     sessionStorage.clear();
   }
+
+  public authenticated() { 
+    const token = sessionStorage.getItem('jwtToken');
+    return this.getToken() && this.getRole();
+  }
   
-  emitRoleChange(role: any) { 
+  public emitRoleChange(role: any) { 
     this.roleChange.next(role);
   }
 
 
-  constructor() { }
 }
