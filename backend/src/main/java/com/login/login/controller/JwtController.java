@@ -1,3 +1,7 @@
+/**
+ * The JwtController class is a REST controller that handles authentication requests and generates JWT
+ * tokens.
+ */
 package com.login.login.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;

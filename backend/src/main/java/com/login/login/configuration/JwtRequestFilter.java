@@ -1,3 +1,8 @@
+/**
+ * The JwtRequestFilter class is a filter that intercepts incoming requests, extracts the JWT token
+ * from the Authorization header, validates it, and sets the authentication in the
+ * SecurityContextHolder if the token is valid.
+ */
 package com.login.login.configuration;
 
 import java.io.IOException;

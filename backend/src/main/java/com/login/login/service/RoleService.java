@@ -1,3 +1,6 @@
+/**
+ * The RoleService class is a service that handles the creation of new Role objects.
+ */
 package com.login.login.service;
 
 import org.springframework.beans.factory.annotation.Autowired;

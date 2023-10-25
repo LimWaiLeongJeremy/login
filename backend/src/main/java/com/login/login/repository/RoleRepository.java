@@ -1,3 +1,4 @@
+// Defining a repository interface for the `Role` model.
 package com.login.login.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;

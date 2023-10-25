@@ -1,3 +1,7 @@
+/**
+ * The JwtAuthenticationEntryPoint class is responsible for handling unauthorized access to the
+ * application by sending an error response.
+ */
 package com.login.login.configuration;
 
 import java.io.IOException;
