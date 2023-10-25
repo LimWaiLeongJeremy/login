@@ -1,3 +1,5 @@
+/* The AdminPageComponent allows only user with admin role to access 
+and display a button for navigating to the home page . */
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 

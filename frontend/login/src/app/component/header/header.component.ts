@@ -1,3 +1,7 @@
+/* The HeaderComponent handles the header section of the
+application navigation. 
+1) It will check for user roll, if admin show admin dashboad button that allows admin to navigate to admin page.
+2) If authenticated state is true, show logout button. */
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { Router } from "@angular/router";

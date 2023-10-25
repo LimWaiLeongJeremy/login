@@ -1,3 +1,6 @@
+/* The AuthInterceptor intercept and adds an authorization token to
+outgoing requests and handles error responses related 
+to authentication and authorization. */
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
