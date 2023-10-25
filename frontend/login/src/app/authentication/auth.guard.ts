@@ -1,3 +1,5 @@
+/* The AuthGuard is an route guard that checks if a user is authenticated and has the
+required role to access a specific route. */
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, UrlTree } from "@angular/router";
 import { AuthService } from "../service/auth/auth.service";

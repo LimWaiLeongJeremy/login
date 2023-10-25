@@ -1,3 +1,7 @@
+/**
+ * The SecurityConfig class is a configuration class that provides a bean for the
+ * BCryptPasswordEncoder, which is used for password encoding in the application.
+ */
 package com.login.login.configuration;
 
 import org.springframework.context.annotation.Bean;

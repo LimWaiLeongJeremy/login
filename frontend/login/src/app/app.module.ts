@@ -22,6 +22,7 @@ import { ForbiddenPageComponent } from './component/forbidden-page/forbidden-pag
 import { FieldsetModule } from 'primeng/fieldset';
 
 
+/* Defining the routes for the application. Gurad aganist unautherized access using AuthGuard class. */
 const routes: Routes = [
   {
     path: '',

@@ -1,3 +1,7 @@
+/**
+ * The JwtService class is responsible for creating JWT tokens, authenticating users, and loading user
+ * details.
+ */
 package com.login.login.service;
 
 import java.util.HashSet;
@@ -32,6 +36,8 @@ public class JwtService implements UserDetailsService {
     @Autowired
     private AuthenticationManager authManager;
 
+
+    // The function creates a JWT token for a user based on their username and password and authenticated.
     public JwtResponse createJwtToken(JwtRequest jwtReq) throws Exception {
         String userName = jwtReq.getUserName();
         String userPassword = jwtReq.getPassword();
@@ -44,6 +50,10 @@ public class JwtService implements UserDetailsService {
         return new JwtResponse(user, newGeneratedToken);
     }
 
+    /**
+     * The function loads user details by username and returns a UserDetails object if the user is found,
+     * otherwise it throws a UsernameNotFoundException.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepo.findByUsername(username);
@@ -58,6 +68,10 @@ public class JwtService implements UserDetailsService {
         }
     }
 
+    /**
+     * The function `getAuthority` takes a `User` object and returns a set of `SimpleGrantedAuthority`
+     * objects based on the user's roles.
+     */
     private Set getAuthority(User user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
         user.getRole().forEach(role -> {
@@ -66,6 +80,11 @@ public class JwtService implements UserDetailsService {
         return authorities;
     }
 
+    
+    /**
+     * The function "authenticate" takes a username and password as input, and uses an authentication
+     * manager to authenticate the user, throwing exceptions for disabled users or invalid credentials.
+     */
     private void authenticate(String userName, String userPassword) throws Exception {
         try {
             authManager.authenticate(new UsernamePasswordAuthenticationToken(userName, userPassword));

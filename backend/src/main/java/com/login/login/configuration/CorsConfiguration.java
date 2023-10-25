@@ -1,3 +1,7 @@
+/**
+ * Enables Cross-Origin Resource Sharing (CORS) for all endpoints, allowing GET, PUT, POST, and DELETE methods,
+ * and allowing all headers and origins.
+ */
 package com.login.login.configuration;
 
 import org.springframework.context.annotation.Bean;

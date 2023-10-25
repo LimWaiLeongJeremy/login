@@ -1,3 +1,4 @@
+/* The LoginPageComponent handles the login functionality of the application. */
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from "src/app/service/login/login.service";
@@ -31,7 +32,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.form = this.createCredential();
   }
 
-
+  /* When user submit a login it will get details from the server and store it 
+  in session using AuthService class and route to home page.
+  Display a toast if user login with a wrong credential. */
   async submit() {
     this.credential = this.form.value as Credential;
     this.sub = this.loginSrc.login(this.credential).subscribe(
@@ -41,10 +44,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         this.authSrc.setUserName(response.user.userName);
         this.authSrc.setFirstName(response.user.firstName);
         this.authSrc.setLastName(response.user.lastName);
-        this.authSrc.setEmail(response.user.email);
+        this.authSrc.setEmail(response.user.email); 
         this.authSrc.setRole(response.user.role);
         this.authSrc.setToken(response.jwtToken);
-        localStorage.setItem('token', response.jwtToken);
         this.router.navigateByUrl('/home');
       },
       (error) => {
@@ -58,7 +60,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       }
     )
   }
-
+  
   private createCredential(): FormGroup {
     return this.fb.group({
       userName: this.fb.control<string>('', Validators.required),
@@ -67,9 +69,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
+      if (this.sub) {
+        this.sub.unsubscribe();
+      }
   }
 
 }

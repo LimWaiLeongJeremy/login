@@ -1,3 +1,5 @@
+/* The HomePageComponent class is to retrieves user information from the
+AuthService upon login and populate the html page with user details. */
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/service/auth/auth.service';
 

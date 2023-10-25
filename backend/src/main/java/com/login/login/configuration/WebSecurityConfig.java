@@ -1,3 +1,7 @@
+/**
+ * The WebSecurityConfig class is a configuration class that sets up security for the application,
+ * including authentication, authorization, and session management.
+ */
 package com.login.login.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +40,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    
+/**
+ * This function configures the security settings for an HTTP request in a Java application.
+ * 
+ * @param httpSecurity The `httpSecurity` parameter is an instance of the `HttpSecurity` class, which
+ * is used to configure the security settings for the application's HTTP requests. It allows you to
+ * define rules for authentication, authorization, and other security-related configurations.
+ */
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors();

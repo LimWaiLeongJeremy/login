@@ -1,3 +1,7 @@
+/**
+ * The UserService class is responsible for registering new users, initializing roles and users in the
+ * database, and encoding passwords.
+ */
 package com.login.login.service;
 
 import java.util.HashSet;
@@ -24,6 +28,8 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    // The `registerNewUser` method is used to register a new user in the system. It takes a `User` object
+    // as a parameter, which contains the details of the new user.
     public User registerNewUser(User user) {
         Role role = roleRepo.findById("User").get();
         Set<Role> roles = new HashSet<>();
@@ -34,7 +40,7 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    // To auto populate the DB
+    // To auto populate the DB 
     public void initRolesAndUser() {
         // initialize roles
         Role adminRole = new Role();

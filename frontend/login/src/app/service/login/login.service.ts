@@ -1,3 +1,4 @@
+/* The LoginService class is responsible for handling login functionality and role matching. */
 import { Injectable } from '@angular/core';
 import { environment } from "../environment";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -32,6 +33,8 @@ export class LoginService {
     );
   }
 
+  /* Checks the list of user roles against the allowed roles define in app.module.ts,
+  if match return true else false.*/
   public roleMatch(allowedRoles: string | any[]): boolean {
     let isMatch = false;
     const userRoles: Roles[] = this.authSrc.getRole();

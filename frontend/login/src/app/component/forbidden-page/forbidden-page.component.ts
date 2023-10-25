@@ -1,3 +1,6 @@
+/* The ForbiddenPageComponent presents abutton that user can be 
+redirect to home page when user don't hold the access 
+right and being directed to forbidden page. */
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 

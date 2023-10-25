@@ -1,3 +1,5 @@
+/* The AuthService class is responsible for managing authentication-related functionality, such as
+storing and retrieving user information and tokens, and emitting events for role changes. */
 import { Injectable } from '@angular/core';
 import { Subject } from "rxjs";
 import { Roles } from "../../model/role";
